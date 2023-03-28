@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 const App = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("0");
   const [previousValue, setPreviousValue] = useState('');
   const [operator, setOperator] = useState('');
   const [answer, setAnswer] = useState(false)
@@ -15,10 +15,11 @@ const App = () => {
   }
 
   const clearScreen = () =>{
-    setInputValue("")
+    setInputValue("0")
   }
   
   const handleButtonClick = (key) => {
+    setInputValue("")
     if(key === '+/-'){
       setInputValue(prevInput=> prevInput * -1)
       return
