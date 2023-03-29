@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 const App = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("0");
   const [previousValue, setPreviousValue] = useState('');
   const [operator, setOperator] = useState('');
   const [answer, setAnswer] = useState(false)
@@ -48,7 +48,7 @@ const App = () => {
       setPreviousValue(inputValue);
       setInputValue('');
     } else {
-      if(inputValue.charAt(0) == 0 || inputValue.charAt(0) == "."){
+      if(inputValue.charAt(0) === "0"){
         setInputValue(key);
         return
       }
@@ -79,8 +79,6 @@ const App = () => {
         return parseFloat(previousValue) * parseFloat(currentValue);
       case '/':
         return parseFloat(previousValue) / parseFloat(currentValue);
-      case '%':
-        return parseFloat(previousValue) % parseFloat(currentValue);
       case '+/-':
         return setInputValue(prevInput=> prevInput * -1)
       default:
